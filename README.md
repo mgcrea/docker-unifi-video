@@ -1,6 +1,6 @@
 # mgcrea/unifi-video [![Docker Pulls](https://img.shields.io/docker/pulls/mgcrea/unifi-video.svg)](https://registry.hub.docker.com/u/mgcrea/unifi-video/)  [![Docker Latest](https://img.shields.io/badge/latest-v3.4.0-blue.svg)](https://hub.docker.com/r/mgcrea/unifi-video/tags/)
 
-Docker image for Ubiquiti [Unifi Controller](https://www.ubnt.com/enterprise/software/)
+Docker image for Ubiquiti [Unifi Video Controller](https://www.ubnt.com/unifi-video/unifi-nvr/)
 
 
 ## Install
@@ -36,8 +36,10 @@ services:
       - ./data/log:/var/log/unifi-video
       - ./data/work:/usr/lib/unifi-video/work
     ports:
-      - "8080:8080/tcp"
-      - "8443:8443/tcp"
+      - "7080:7080/tcp"
+      - "7443:7443/tcp"
+      - "6666:6666"
+      - "7447:7447"
     restart: always
 ```
 
