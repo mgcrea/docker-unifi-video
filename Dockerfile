@@ -23,7 +23,7 @@ RUN curl -L -o unifi-video.deb http://dl.ubnt.com/firmwares/unifi-video/${IMAGE_
 
 VOLUME ["/var/lib/unifi-video", "/var/log/unifi-video", "/var/run/unifi-video", "/usr/lib/unifi-video/work"]
 
-EXPOSE 7080/tcp 7443/tcp 6666 7447
+EXPOSE 7080/tcp 7443/tcp 6666 7445/tcp 7446/tcp 7447
 
 WORKDIR /usr/lib/unifi-video
 
