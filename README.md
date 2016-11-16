@@ -1,4 +1,4 @@
-# mgcrea/unifi-video [![Docker Pulls](https://img.shields.io/docker/pulls/mgcrea/unifi-video.svg)](https://registry.hub.docker.com/u/mgcrea/unifi-video/)  [![Docker Latest](https://img.shields.io/badge/latest-v3.4.0-blue.svg)](https://hub.docker.com/r/mgcrea/unifi-video/tags/)
+# mgcrea/unifi-video [![Docker Pulls](https://img.shields.io/docker/pulls/mgcrea/unifi-video.svg)](https://registry.hub.docker.com/u/mgcrea/unifi-video/)  [![Docker Latest](https://img.shields.io/badge/latest-v3.5.1-blue.svg)](https://hub.docker.com/r/mgcrea/unifi-video/tags/)
 
 Docker image for Ubiquiti [Unifi Video Controller](https://www.ubnt.com/unifi-video/unifi-nvr/)
 
