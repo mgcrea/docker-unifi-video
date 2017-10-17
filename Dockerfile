@@ -19,7 +19,7 @@ RUN apt-get update \
   && apt-get autoremove -y \
   && apt-get clean
 
-RUN curl -L -o unifi-video.deb https://dl.ubnt.com/firmwares/unifi-video/${IMAGE_VERSION}/unifi-video_${IMAGE_VERSION}-Ubuntu16.04_amd64.deb \
+RUN curl -L -o unifi-video.deb https://dl.ubnt.com/firmwares/ufv/v${IMAGE_VERSION}/unifi-video.Ubuntu16.04_amd64.v${IMAGE_VERSION}.deb \
   && dpkg -i unifi-video.deb
 
 VOLUME ["/var/lib/unifi-video", "/var/log/unifi-video", "/var/run/unifi-video", "/usr/lib/unifi-video/work"]
