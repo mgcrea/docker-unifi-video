@@ -16,8 +16,7 @@ fi
 DOCKER_CHOWN_VOLUMES=${DOCKER_CHOWN_VOLUMES:-"no"}
 if [[ $DOCKER_CHOWN_VOLUMES == "yes" ]]; then
   echo "Setting up permissions..."
-  chown -R $UNIFI_USER:$UNIFI_GROUP /var/lib/unifi-video /var/log/unifi-video /usr/lib/unifi-video/work /var/cache/unifi-video
-fi
+  chown -R $UNIFI_USER:$UNIFI_GROUP /var/lib/unifi-video /var/log/unifi-video /usr/lib/unifi-video/work
 
 echo "Starting unifi-video..."
 /usr/sbin/unifi-video start
