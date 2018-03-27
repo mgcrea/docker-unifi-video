@@ -6,7 +6,7 @@ version: '2'
 services:
   unifi_video_controller:
     image: mgcrea/unifi-video:3
-    container_name: unifi_video_controller
+    container_name: unifi_video
     environment:
       - TZ=Europe/Paris
     network_mode: "bridge"
@@ -15,6 +15,7 @@ services:
       - ./data/lib:/var/lib/unifi-video
       - ./data/log:/var/log/unifi-video
       - ./data/work:/usr/lib/unifi-video/work
+      - ./data/cache:/var/cache/unifi-video
     ports:
       - "7080:7080/tcp"
       - "7443:7443/tcp"
