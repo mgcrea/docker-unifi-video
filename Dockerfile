@@ -33,6 +33,8 @@ WORKDIR $UNIFI_WORKDIR
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
+RUN sed -i -e 's/UFV_DAEMONIZE=true/UFV_DAEMONIZE=false/' -e 's/log_error()/ulimit() {\n\techo ""\n}\n\nlog_error()/' /usr/sbin/unifi-video 
+
 ADD ./files/entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 770 /sbin/entrypoint.sh
 

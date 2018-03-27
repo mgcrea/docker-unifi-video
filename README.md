@@ -22,25 +22,33 @@ docker-compose up -d
 ### Compose
 
 ```yaml
-version: '2'
+version: '3.1'
 services:
   unifi_video_controller:
     image: mgcrea/unifi-video:3
-    container_name: unifi_video_controller
+    hostname: unifi_video
+    container_name: unifi_video
     environment:
       - TZ=Europe/Paris
     network_mode: "bridge"
-    privileged: true
+    privileged: true # @TODO SYS_ADMIN, DAC_READ_SEARCH, NET_BIND_SERVICE, SYS_PTRACE, SETUID, and SETGID
     volumes:
       - ./data/lib:/var/lib/unifi-video
       - ./data/log:/var/log/unifi-video
       - ./data/work:/usr/lib/unifi-video/work
+      - ./data/cache:/var/cache/unifi-video
     ports:
       - "7080:7080/tcp"
       - "7443:7443/tcp"
       - "6666:6666"
+      - "7440:7440"
+      - "7445:7442"
+      - "7445:7443"
+      - "7445:7445"
+      - "7446:7446"
       - "7447:7447"
     restart: always
+
 ```
 
 
