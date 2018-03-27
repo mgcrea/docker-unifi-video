@@ -1,11 +1,11 @@
 DOCKER_IMAGE := mgcrea/unifi-video
-IMAGE_VERSION := 3.9.3
+IMAGE_VERSION := 3.9.5-beta.3
 BASE_IMAGE := ubuntu:16.04
 
 all: build
 
 bash:
-	@docker run --privileged --rm -it ${DOCKER_IMAGE} /bin/bash
+	@docker run --entrypoint /bin/bash --privileged --rm -it ${DOCKER_IMAGE}
 
 build:
 	@docker build --build-arg IMAGE_VERSION=${IMAGE_VERSION} --tag=${DOCKER_IMAGE}:latest .
