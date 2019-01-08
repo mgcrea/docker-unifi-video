@@ -1,5 +1,5 @@
 DOCKER_IMAGE := mgcrea/unifi-video
-IMAGE_VERSION := 3.9.5-beta.3
+IMAGE_VERSION := 3.9.12
 BASE_IMAGE := ubuntu:16.04
 
 all: build
