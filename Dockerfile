@@ -26,7 +26,7 @@ RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mo
 #  && echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 
 RUN apt-get update \
-#   && apt-get install oracle-java8-installer -y --no-install-recommends \
+  #   && apt-get install oracle-java8-installer -y --no-install-recommends \
   && apt-get install openjdk-8-jre-headless -y --no-install-recommends \
   && apt-get install mongodb-org -y --no-install-recommends \
   && apt-get autoremove -y \
@@ -44,7 +44,7 @@ WORKDIR $UNIFI_WORKDIR
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 # ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
-RUN sed -i -e 's/UFV_DAEMONIZE=true/UFV_DAEMONIZE=false/' -e 's/log_error()/ulimit() {\n\techo ""\n}\n\nlog_error()/' /usr/sbin/unifi-video 
+RUN sed -i -e 's/ENABLE_TMPFS=yes/ENABLE_TMPFS=no/' -e 's/log_error()/ulimit() {\n\techo ""\n}\n\nlog_error()/' /usr/sbin/unifi-video
 
 ADD ./files/entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 770 /sbin/entrypoint.sh
